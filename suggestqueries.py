@@ -24,7 +24,7 @@ End of function we call 3 other functions to build up the keywords list
 
 def api_call(keyword):
     
-    keywords = [keyword]
+    keywords = []
      
     url = "http://suggestqueries.google.com/complete/search?output=firefox&q=" + keyword
     response = requests.get(url, verify=False)
@@ -144,7 +144,7 @@ def get_more(keyword,keywords):
                 print(len(keywords))
             
                    
-            if len(keywords) >= 1000: #we can increase this number if we want more keywords
+            if len(keywords) >= 10: #we can increase this number if we want more keywords
                 print('###Finish here####')
                 break
 '''
@@ -177,7 +177,3 @@ def clean_df(keywords,keyword):
     json_hist = df.to_json(orient="columns")
    
 api_call(keyword)
-
-
-
-
